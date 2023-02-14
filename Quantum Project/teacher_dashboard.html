@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Page</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="stylesheet" href="CSS_files/teacher_dashboard_sass.css" />
+  </head>
+  <body>
+    <!-- header start -->
+    <header>
+      <div class="header-bg"></div>
+      <img
+        class="brand-logo"
+        src="images/icons/logo used in header.svg"
+        alt="logo not found"
+      />
+      <nav>
+        <ul class="collapse">
+          <li class="no-sub">
+            <div class="link-div">
+              <a href="dashboard.html" class="nav-link active"
+                >DASHBOARD
+                <p class=""></p
+              ></a>
+            </div>
+          </li>
+          <li class="have-sub" id="content">
+            <div class="link-div" onclick="open_sub_nav('content')">
+              <a class="nav-link" href="r_dashboard.html"
+                >CONTENT
+                <p class=""></p>
+                <img
+                  id="content-dropdown-arrow"
+                  class="open-sub-nav-icon"
+                  src="images/icons/dropdown_arrow.svg"
+                  lt="open options down icon not found"
+                />
+              </a>
+            </div>
+
+            <div class="sub-nav" id="content-sub-nav">
+              <ul>
+                <li><a href="gg">COURSE CATALOG</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="have-sub" id="users">
+            <div class="link-div" onclick="open_sub_nav('users')">
+              <a class="nav-link" href="gg"
+                >USERS
+                <p class=""></p>
+                <img
+                  id="users-dropdown-arrow"
+                  class="open-sub-nav-icon"
+                  src="images/icons/dropdown_arrow.svg"
+                  lt="open options down icon not found"
+                />
+              </a>
+            </div>
+
+            <div class="sub-nav" id="users-sub-nav">
+              <ul>
+                <li><a href="gg">USER CATALOG</a></li>
+                <li><a href="hh">USER CATALOG</a></li>
+                <li><a href="gg">USER CATALOG</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="have-sub">
+            <div class="link-div" onclick="open_sub_nav('reports')">
+              <a class="nav-link" href="gg" id="reports"
+                >REPORTS
+                <p class=""></p>
+                <img
+                  id="reports-dropdown-arrow"
+                  class="open-sub-nav-icon"
+                  src="images/icons/dropdown_arrow.svg"
+                  lt="open options down icon not found"
+                />
+              </a>
+            </div>
+
+            <div class="sub-nav" id="reports-sub-nav">
+              <ul>
+                <li><a href="hh">REPORT CATALOG</a></li>
+                <li><a href="gg">REPORT CATALOG</a></li>
+                <li><a href="gg">REPORT CATALOG</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="have-sub" id="admin">
+            <div class="link-div" onclick="open_sub_nav('admin')">
+              <a class="nav-link" href="gg"
+                >ADMIN
+                <p class=""></p>
+                <img
+                  id="admin-dropdown-arrow"
+                  class="open-sub-nav-icon"
+                  src="images/icons/dropdown_arrow.svg"
+                  lt="open options down icon not found"
+                />
+              </a>
+            </div>
+
+            <div class="sub-nav" id="admin-sub-nav">
+              <ul>
+                <li><a>ADMIN CATALOG</a></li>
+                <li><a href="gg">ADMIN CATALOG</a></li>
+                <li><a href="gg">ADMIN CATALOG</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li class="notification-nav">
+            <a href="#dd" class="notification-link"
+              ><img
+                class="img-icon"
+                id="notification-icon"
+                src="images/icons/alerts.svg"
+                alt="alert image not found"
+              />
+              <p class="set-count" id="total-notification"><span>6</span></p></a
+            >
+            <div id="display-notification">
+              <div class="notification-data">
+                <div class="one-notification unticked-notification-bg">
+                  <div class="notification-head">
+                    <p class="notification-headline">
+                      License for Intsoduction to Algebra has been assigned to
+                      your school
+                    </p>
+                    <img
+                      src="images/icons/do_not_disturb.svg"
+                      class="notification-lists-icon-col"
+                      alt="checked circle icon not found"
+                    />
+                  </div>
+                  <p class="notification-date-time">15-Sep-2018 at 01:21 pm</p>
+                </div>
+                <div class="one-notification">
+                  <div class="notification-head">
+                    <p class="notification-headline">
+                      License for Intsoduction to Algebra has been assigned to
+                      your school
+                    </p>
+                    <img
+                      src="images/icons/check_circle.svg"
+                      class="notification-lists-icon-col"
+                      alt="checked circle icon not found"
+                    />
+                  </div>
+
+                  <p class="notification-added-info">
+                    <span>Course:</span>Advanced Mathematics
+                  </p>
+                  <p class="notification-date-time">15-Sep-2018 at 01:21 pm</p>
+                </div>
+                <div class="one-notification unticked-notification-bg">
+                  <div class="notification-head">
+                    <p class="notification-headline">23 new students created</p>
+                    <img
+                      src="images/icons/do_not_disturb.svg"
+                      class="notification-lists-icon-col"
+                      alt="checked circle icon not found"
+                    />
+                  </div>
+                  <p class="notification-date-time">15-Sep-2018 at 01:21 pm</p>
+                </div>
+                <div class="one-notification unticked-notification-bg">
+                  <div class="notification-head">
+                    <p class="notification-headline">
+                      License for Intsoduction to Algebra has been assigned to
+                      your school
+                    </p>
+                    <img
+                      src="images/icons/do_not_disturb.svg"
+                      class="notification-lists-icon-col"
+                      alt="checked circle icon not found"
+                    />
+                  </div>
+                  <p class="notification-date-time">15-Sep-2018 at 01:21 pm</p>
+                </div>
+                <div class="one-notification">
+                  <div class="notification-head">
+                    <p class="notification-headline">
+                      License for Intsoduction to Algebra has been assigned to
+                      your school
+                    </p>
+                    <img
+                      src="images/icons/check_circle.svg"
+                      class="notification-lists-icon-col"
+                      alt="checked circle icon not found"
+                    />
+                  </div>
+                  <p class="notification-date-time">15-Sep-2018 at 01:21 pm</p>
+                </div>
+                <div class="one-notification unticked-notification-bg">
+                  <div class="notification-head">
+                    <p class="notification-headline">
+                      L15 submissions ready for evalution
+                    </p>
+                    <img
+                      src="images/icons/do_not_disturb.svg"
+                      class="notification-lists-icon-col"
+                      alt="checked circle icon not found"
+                    />
+                  </div>
+                  <p class="notification-added-info">
+                    <span>Course:</span>Advanced Mathematics
+                  </p>
+                  <p class="notification-date-time">15-Sep-2018 at 01:21 pm</p>
+                </div>
+              </div>
+              <div class="notification-bottom">
+                <a class="show-all-notification" href="ddd">show all</a>
+              </div>
+              <!-- <div class="notification-bottom">
+                <p class="show-all-notification">show all</p>
+                <p class="pipeline"></p>
+                <p class="create-new-notification">create new</p>
+              </div> -->
+            </div>
+          </li>
+          <li class="announcement-nav">
+            <a href="#" class="announcement-link">
+              <img
+                id="announcement-icon"
+                src="images/icons/announcements.svg"
+                alt="alert image not found"
+              />
+              <p class="set-count" id="total-announcement"><span>6</span></p></a
+            >
+            <div id="display-announcement">
+              <div class="announcement-data">
+                <div class="one-announcement">
+                  <div class="announcement-head">
+                    <div>
+                      <p class="announcement-by">
+                        <span>PA:</span> Wilson Kumar
+                      </p>
+                      <p class="announcement-info">
+                        No classes will be held on 21st Nov
+                      </p>
+                    </div>
+                    <img
+                      src="images/icons/check_circle.svg"
+                      class="notification-lists-icon-col"
+                      alt="checked circle icon not found"
+                    />
+                  </div>
+                  <div class="announcement-attached-detail">
+                    <div class="announcement-attached-files"></div>
+                    <p class="announcement-date-time">
+                      15-Sep-2018 at 07:21 pm
+                    </p>
+                  </div>
+                </div>
+                <div class="one-announcement unticked-notification-bg">
+                  <div class="announcement-head">
+                    <div>
+                      <p class="announcement-by">
+                        <span>PA:</span> Samson White
+                      </p>
+                      <p class="announcement-info">
+                        Guest lecture on Geometry on 20th September
+                      </p>
+                    </div>
+                    <img
+                      src="images/icons/do_not_disturb.svg"
+                      class="notification-lists-icon-col"
+                      alt="checked circle icon not found"
+                    />
+                  </div>
+                  <div class="announcement-attached-detail">
+                    <div class="announcement-attached-files">
+                      <span class="material-symbols-outlined">
+                        attach_file
+                      </span>
+                      <p>2 files are attached</p>
+                    </div>
+                    <p class="announcement-date-time">
+                      15-Sep-2018 at 07:21 pm
+                    </p>
+                  </div>
+                </div>
+                <div class="one-announcement unticked-notification-bg">
+                  <div class="announcement-head">
+                    <div>
+                      <p class="announcement-by">
+                        <span>PA:</span> Wilson Kumar
+                      </p>
+                      <p class="announcement-info">
+                        Additional course materials available on request
+                      </p>
+                    </div>
+                    <img
+                      src="images/icons/do_not_disturb.svg"
+                      class="notification-lists-icon-col"
+                      alt="checked circle icon not found"
+                    />
+                  </div>
+                  <p class="announcement-added-info">
+                    <span>Course:</span>Advanced Mathematics
+                  </p>
+                  <div class="announcement-attached-detail">
+                    <div class="announcement-attached-files">
+                      <!-- <span class="material-symbols-outlined">
+                        attach_file
+                      </span>
+                      <p>2 files are attached</p> -->
+                    </div>
+                    <p class="announcement-date-time">
+                      15-Sep-2018 at 01:21 pm
+                    </p>
+                  </div>
+                </div>
+                <div class="one-announcement">
+                  <div class="announcement-head">
+                    <div>
+                      <p class="announcement-by">
+                        <span>PA:</span> Wilson Kumar
+                      </p>
+                      <p class="announcement-info">
+                        No classes will be held on 21st Nov
+                      </p>
+                    </div>
+                    <img
+                      src="images/icons/check_circle.svg"
+                      class="notification-lists-icon-col"
+                      alt="checked circle icon not found"
+                    />
+                  </div>
+                  <div class="announcement-attached-detail">
+                    <div class="announcement-attached-files">
+                      <!-- <span class="material-symbols-outlined">
+                        attach_file
+                      </span>
+                      <p>2 files are attached</p> -->
+                    </div>
+                    <p class="announcement-date-time">
+                      15-Sep-2018 at 01:21 pm
+                    </p>
+                  </div>
+                </div>
+                <div class="one-announcement unticked-notification-bg">
+                  <div class="announcement-head">
+                    <div>
+                      <p class="announcement-by">
+                        <span>PA:</span> Wilson Kumar
+                      </p>
+                      <p class="announcement-info">
+                        Additional course materials available on request
+                      </p>
+                    </div>
+                    <img
+                      src="images/icons/do_not_disturb.svg"
+                      class="notification-lists-icon-col"
+                      alt="checked circle icon not found"
+                    />
+                  </div>
+                  <div class="announcement-attached-detail">
+                    <div class="announcement-attached-files">
+                      <span class="material-symbols-outlined">
+                        attach_file
+                      </span>
+                      <p>2 files are attached</p>
+                    </div>
+                    <p class="announcement-date-time">
+                      15-Sep-2018 at 01:21 pm
+                    </p>
+                  </div>
+                </div>
+                <div class="one-announcement unticked-notification-bg">
+                  <div class="announcement-head">
+                    <div>
+                      <p class="announcement-by">
+                        <span>PA:</span> Wilson Kumar
+                      </p>
+                      <p class="announcement-info">
+                        No classes will be held on 21st Nov dkjfjkb
+                        dfjkdnkjfdkjfdnkfdsj
+                      </p>
+                    </div>
+                    <img
+                      src="images/icons/do_not_disturb.svg"
+                      class="notification-lists-icon-col"
+                      alt="checked circle icon not found"
+                    />
+                  </div>
+                  <div class="announcement-attached-detail">
+                    <div class="announcement-attached-files">
+                      <span class="material-symbols-outlined">
+                        attach_file
+                      </span>
+                      <p>2 files are attached</p>
+                    </div>
+                    <p class="announcement-date-time">
+                      15-Sep-2018 at 01:21 pm
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="announcement-bottom">
+                <a href="yyy" class="show-all-announcement">show all</a>
+                <p class="devider"></p>
+                <a href="iii" class="create-new-announcement">create new</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="profile-nav">
+              <img
+                class="img-icon"
+                src="images/my_photo.jpg"
+                alt="account icon not found"
+              />
+              <p class="set-count"><span>T</span></p>
+            </a>
+          </li>
+          <li class="hamburger">
+            <a href="#">
+              <img
+                id="hamburgerIcon"
+                src="images/icons/hamburger-menu.svg"
+                alt="hamburger-menu icon not found"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- header end -->
+
+    <!-- main section start -->
+    <section class="main">
+      <!-- header of main section start -->
+      <div class="main-head text-bold">
+        <div class="course-head main-head-bottom-border">
+          <img src="images/icons/courses.svg" alt="image not found" />
+          <p>&nbsp;<span class="total-courses">4</span>&nbsp;Courses</p>
+        </div>
+        <div id="class-head">
+          <img src="images/icons/classes.svg" alt="image not found" />
+          <p>&nbsp;<span class="total-classes">4</span>&nbsp;Classes</p>
+        </div>
+      </div>
+      <!-- header of main section end -->
+
+      <!-- sortbar start -->
+      <div class="sortbar">
+        <p>Showing 4 of 4 courses</p>
+        <div class="sort-dropdown">
+          <p>Sort By:</p>
+          <select class="dropdown-menu">
+            <option>Course Name</option>
+            <option value="physics">Physics</option>
+            <option value="maths">Maths</option>
+            <option value="sceince">Sceince</option>
+          </select>
+          <img
+            class="up-arrow"
+            src="images/icons/sort.svg"
+            alt="down arrow icon not found"
+          />
+        </div>
+      </div>
+      <!-- sortbar end -->
+
+      <!-- course-class card options start -->
+      <div class="courses"></div>
+      <!-- course-class card options end -->
+    </section>
+    <!-- main section end -->
+
+    <!-- footer start -->
+    <footer>
+      <div class="about-contact">
+        <a href="#">About</a><span class="pipeline"></span
+        ><a href="#">Contact Us</a>
+      </div>
+      <div class="main-footer">
+        <img src="images/icons/logo used in footer.svg" alt="logo not found" />
+        <p class="footer-pipeline"></p>
+        <p>
+          Copyright &copy; 2020-2021 Zeus Systems Pvt. Ltd. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <!-- footer end -->
+  </body>
+  <script type="text/javascript" src="JS_files/dashboard.js"></script>
+</html>

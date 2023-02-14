@@ -1,0 +1,173 @@
+@import "colors";
+@import "mixin";
+@import "commom_class_dashboard";
+@font-face{
+    font-family: "quicksand";
+    src: url("fonts/Quicksandfont1/Quicksand-VariableFont_wght.ttf") format(".ttf");
+}
+@import "footer";
+html{
+    @include flex-dir-jus-align(column,normal,normal );
+
+    body{
+        font-family: quicksand;
+        box-sizing: border-box;
+        @include flex-dir-jus-align(column,space-between,normal );
+        margin: 0px;
+        width: 100vw;
+        min-height: 100vh;
+        background-color: $bg-color;
+        header{
+            max-width:100%;
+            padding: 10px 30px 5px 30px;
+            margin: 0px;
+            border-bottom:2px solid $header-bottom-border-col;
+            background: $header-bg-col;
+            position: relative;
+            div{
+                width: 100%;
+                height: 56px;
+                left: 0px;
+                top:0px;
+                background: transparent url("images/header\ pattern\ svg.svg");
+                mix-blend-mode: overlay;
+                opacity: 0.8;
+                position: absolute;
+            }
+        }
+        .main{
+            box-sizing: border-box;
+            width: 488px;
+            @include phone{
+                width: 90vw;
+            }
+            font-weight: bold;
+            font-size: 16px;
+            border-radius:2px 2px 5px 5px;
+            border-top: 4px solid $form-border-top;
+            background-color: $white-col;
+            margin: 50px auto;
+            padding: 20px 32px 24px 32px;
+            @include teblet{
+                margin-bottom: 258px;
+            }
+            @include phone{
+                margin-bottom: 50px;
+            }
+            box-shadow: 0px 0px 10px $bg-color;
+            
+            .form-header{
+                height:30px;
+                margin-bottom: 34px;
+                @include flex-dir-jus-align(row,flex-start ,center );
+                p{
+                    margin: auto ;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 24px;
+                }
+            }
+            .form-choise{
+                height: 24px;
+                margin-bottom: 23px;
+                @include flex-dir-jus-align(row,normal ,center );
+                gap:32px;
+                input{
+                    margin: 0px;
+                    height: 24px;
+                    width: 20px;
+                    accent-color: $radio-btn-col;
+                }
+                div{
+                        @include flex-dir-jus-align(row,center ,center );
+                        gap:8px;
+                }
+            }
+            .state-label{
+                font-size: 12px;
+            }
+            .district-dropdown{
+                margin-top: 36px;
+                .district-label{
+                    font-size: 12px;
+                }
+            }
+            .form-input{
+                outline: none;
+                font-size: 16px;
+                padding: 0px 0px 4px 0px;
+                width: 100%;
+                border:0px;
+                border-bottom: 1px solid $input-bottom-border-col;
+            }
+            .username{
+                margin-top: 56px;
+                height: 48px;
+            }
+            .password{
+                height: 48px;
+                margin-top: 33px;
+                div{
+                    border-bottom: 1px solid $input-bottom-border-col;
+                    img{
+                        width: 22px;
+                        height: 21px;
+                        float: right;
+                    }
+                    input{
+                        width: 400px;
+                        @include phone{
+                            width: 90%;
+                        }
+                        border-bottom: none;
+                        &::-ms-reveal, &::-ms-clear{
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .link-forgot{
+                float: right;
+                margin-top: 3px;
+                color:$color-link;
+                font-size: 14px;
+                display: block;
+                width: 100%;
+                text-align: end;
+                text-decoration: none;
+            }
+            .remember-btn{
+                margin: 24px 0px 34px 0px;
+                height: 24px;
+                @include flex-dir-jus-align(row,normal ,cenrter );
+                input{
+                    height: 100%;
+                    width: 18px;
+                    margin: 0px;
+                    accent-color: $radio-btn-col;
+                }
+                label{
+                    line-height: 24px;
+                    padding-left: 5px;
+                }
+            }
+            .login-btn{
+                height: 40px;
+                width: 50%; 
+                margin-left: 25%;
+                padding: 10px;
+                font-size: 14px;
+                font-weight: 500;
+                background-color: $btn-bg-color;
+                border-radius: 3px;
+                border:0px;
+                box-shadow: 0px 3px 5px $shadow-col;
+                
+            }
+        }
+
+        footer{
+            @extend footer;
+        }
+    }
+}

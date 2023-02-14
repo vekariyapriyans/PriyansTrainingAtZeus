@@ -1,0 +1,350 @@
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.sub-nav-display-flex {
+  display: flex;
+}
+
+.sub-nav-display-none {
+  display: none;
+}
+
+.sub-nav-link-bg {
+  background-color: #F3F3F3;
+}
+
+.sub-nav-dropdown-arrow {
+  rotate: 180deg;
+}
+
+.color-black {
+  color: black;
+}
+
+.color-white {
+  color: white;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.pipeline {
+  margin-right: 8px;
+  margin-left: 8px;
+  border-left: 2px solid rgba(0, 0, 0, 0.1215686275);
+}
+
+.opacity-0-4 {
+  opacity: 0.4;
+}
+
+.opacity-0-2 {
+  opacity: 0.2;
+}
+
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+
+.disable-link {
+  pointer-events: none;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.388);
+  border-radius: 6px;
+}
+
+.unticked-notification-bg {
+  background-color: #FFFFEE;
+}
+
+@keyframes menu-open-anim {
+  0% {
+    transform: translateY(-50%) scaleY(0);
+  }
+  100% {
+    transform: translateY(0%) scaleY(1);
+  }
+}
+@keyframes menu-close-anim {
+  0% {
+    transform: translateY(0%) scaleY(1);
+  }
+  100% {
+    transform: translateY(-50%) scaleY(0);
+  }
+}
+@keyframes list-anim {
+  0% {
+    line-height: 0px;
+    height: 0px;
+    overflow: hidden;
+  }
+  100% {
+    line-height: 48px;
+    height: 48px;
+  }
+}
+.white-icon {
+  filter: brightness(0) invert(1);
+}
+
+.notification-lists-icon-col {
+  filter: invert(39%) sepia(16%) saturate(1701%) hue-rotate(103deg) brightness(94%) contrast(88%);
+}
+
+.favorite-unmarked {
+  filter: invert(0) sepia(1) saturate(0) hue-rotate(0deg) brightness(1);
+}
+
+@font-face {
+  font-family: "quicksand";
+  src: url("fonts/Quicksandfont1/Quicksand-VariableFont_wght.ttf") format(".ttf");
+}
+footer .about-contact {
+  width: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+}
+footer .about-contact a {
+  text-decoration: none;
+  color: rgb(31, 122, 84);
+}
+footer .main-footer {
+  height: 40px;
+  padding: 0px 10px;
+  margin: auto 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(224, 225, 225);
+}
+footer .main-footer .footer-pipeline {
+  height: 24px;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1215686275);
+}
+@media only screen and (max-width: 500px) {
+  footer .main-footer {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+footer .main-footer p {
+  font-size: small;
+}
+footer .main-footer img {
+  margin: 0px 20px;
+}
+
+html {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
+}
+html body {
+  font-family: quicksand;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: normal;
+  margin: 0px;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(238, 238, 238);
+}
+html body header {
+  max-width: 100%;
+  padding: 10px 30px 5px 30px;
+  margin: 0px;
+  border-bottom: 2px solid #31b9e4;
+  background: #25313f;
+  position: relative;
+}
+html body header div {
+  width: 100%;
+  height: 56px;
+  left: 0px;
+  top: 0px;
+  background: transparent url("images/header pattern svg.svg");
+  mix-blend-mode: overlay;
+  opacity: 0.8;
+  position: absolute;
+}
+html body .main {
+  box-sizing: border-box;
+  width: 488px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 2px 2px 5px 5px;
+  border-top: 4px solid rgb(67, 201, 237);
+  background-color: white;
+  margin: 50px auto;
+  padding: 20px 32px 24px 32px;
+  box-shadow: 0px 0px 10px rgb(238, 238, 238);
+}
+@media only screen and (max-width: 500px) {
+  html body .main {
+    width: 90vw;
+  }
+}
+@media only screen and (max-width: 800px) {
+  html body .main {
+    margin-bottom: 258px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  html body .main {
+    margin-bottom: 50px;
+  }
+}
+html body .main .form-header {
+  height: 30px;
+  margin-bottom: 34px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+html body .main .form-header p {
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+html body .main .form-choise {
+  height: 24px;
+  margin-bottom: 23px;
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: center;
+  gap: 32px;
+}
+html body .main .form-choise input {
+  margin: 0px;
+  height: 24px;
+  width: 20px;
+  accent-color: #1F7A54;
+}
+html body .main .form-choise div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+html body .main .state-label {
+  font-size: 12px;
+}
+html body .main .district-dropdown {
+  margin-top: 36px;
+}
+html body .main .district-dropdown .district-label {
+  font-size: 12px;
+}
+html body .main .form-input {
+  outline: none;
+  font-size: 16px;
+  padding: 0px 0px 4px 0px;
+  width: 100%;
+  border: 0px;
+  border-bottom: 1px solid rgb(185, 185, 185);
+}
+html body .main .username {
+  margin-top: 56px;
+  height: 48px;
+}
+html body .main .password {
+  height: 48px;
+  margin-top: 33px;
+}
+html body .main .password div {
+  border-bottom: 1px solid rgb(185, 185, 185);
+}
+html body .main .password div img {
+  width: 22px;
+  height: 21px;
+  float: right;
+}
+html body .main .password div input {
+  width: 400px;
+  border-bottom: none;
+}
+@media only screen and (max-width: 500px) {
+  html body .main .password div input {
+    width: 90%;
+  }
+}
+html body .main .password div input::-ms-reveal, html body .main .password div input::-ms-clear {
+  display: none;
+}
+html body .main .link-forgot {
+  float: right;
+  margin-top: 3px;
+  color: rgb(31, 122, 84);
+  font-size: 14px;
+  display: block;
+  width: 100%;
+  text-align: end;
+  text-decoration: none;
+}
+html body .main .remember-btn {
+  margin: 24px 0px 34px 0px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: cenrter;
+}
+html body .main .remember-btn input {
+  height: 100%;
+  width: 18px;
+  margin: 0px;
+  accent-color: #1F7A54;
+}
+html body .main .remember-btn label {
+  line-height: 24px;
+  padding-left: 5px;
+}
+html body .main .login-btn {
+  height: 40px;
+  width: 50%;
+  margin-left: 25%;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: rgb(63, 210, 139);
+  border-radius: 3px;
+  border: 0px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2392156863);
+}/*# sourceMappingURL=login_saas.css.map */

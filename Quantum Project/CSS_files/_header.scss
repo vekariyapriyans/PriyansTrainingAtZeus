@@ -1,0 +1,443 @@
+
+header{
+            
+    .header-bg{
+        width: 100%;
+        height: 56px;
+        left: 0px;
+        top:0px;
+        background: transparent url("../images/header\ pattern\ svg.svg");
+        mix-blend-mode: overlay;
+        opacity: 0.8;
+        position: absolute;
+    }
+    @include teblet{
+    border-bottom: 2px solid $header-bottom-border-col;
+    }
+    position: relative;
+    padding-right: 15px;
+    @include phone{
+        padding-right: 5px;
+    }
+    height: 56px;
+    font-size: 14px;
+    font-weight: 500;
+    @include flex-dir-jus-align(row,space-between,center);
+    margin: 0px;
+    height: 55px;
+    background-color: $header-bg-col;
+    .brand-logo{
+        padding:12px 10px 8px 25px;
+        @include phone{
+            padding:5px;
+        }
+    }
+    nav{
+        height: 100%;
+        @include flex-dir-jus-align(row,flex-end,center);
+        
+        .collapse{
+            @include teblet{
+                display: none;
+            }
+        }
+        ul{
+            display: inline;
+            list-style-type: none;
+            padding-inline-start: 0px;
+            height: 100%;
+            margin: 0px;
+            @include flex-dir-jus-align(row,flex-end,center);
+            li{
+                cursor: pointer;
+                position: relative;
+                justify-self: end;
+                padding: 0px 15px;
+                @include teblet{
+                    padding: 0px 10px;
+                }
+                @include small-phone{
+                    padding: 0px 5px;
+                }
+                .link-div{
+                    margin: 0px;
+                    display: flex;
+                    height: 56px;
+                    a{
+                        position: relative;
+                        display: flex;
+                        height: 56px;
+                        line-height: 56px;
+                        @include link-color-decNone($nav-link-col);
+                        
+                    }
+                    .active{
+                        @include desktop{
+                            color: $white-col;
+                            p{
+                                margin: 0px;
+                                bottom: 0px;
+                                right: -5%;
+                                width: 110%;
+                                position: absolute;
+                                text-shadow: 0px 0px 2px rgb(0, 0, 0);
+                                font-size: 600;
+                                border-bottom: 4px solid $white-col;
+                            }
+                        }
+                    }
+                }
+                a{
+                    position: relative;
+                    display: flex;
+                    height: 56px;
+                    line-height: 56px;
+                    @include link-color-decNone($nav-link-col);
+                    img{
+                        margin:auto;
+                    }
+                    .set-count{
+                        @include flex-dir-jus-align(row,center,center);
+                        height: 15px;
+                        width: 15px;
+                        margin: 3px 0px;
+                        position: absolute;
+                        right: -5px;
+                        top: 10px;
+                        border-radius: 50%;
+                        background-color: $notification-count-col;
+                        z-index: 3;
+                        
+                        span{
+                            text-align: center;
+                            font-size: 12px;
+                            color:$white-col;
+                        }
+                    }
+                }
+                #display-notification{
+                    box-shadow: 0px 1px 6px $shadow-col;
+                    right:0px;
+                    @include phone{
+                        right:-120px;
+                    }
+                    top:56px;
+                    z-index: 1;
+                    position: absolute;
+                    background-color: $white-col;
+                    @include flex-dir-jus-align(column,normal,normal);
+                    display: none;
+                    width: 315px;
+                    height:fit-content;
+                    .notification-data{
+                        overflow-y:scroll;
+                        max-height: 534px;
+                        @include flex-dir-jus-align(column,normal,normal);
+                        .one-notification{
+                            border-bottom: 1px solid $notification-bottom-border-col;
+                            padding:16px;
+                            @include flex-dir-jus-align(column,normal,normal);
+                            .notification-head{
+                                width: 100%;
+                                padding: 0px;
+                                margin: 0px;
+                                @include flex-dir-jus-align(row,space-between,normal);
+                                gap:8px;
+                                img{
+                                    height: 18px;
+                                    width: 18px;
+                                }
+                                .notification-headline{
+                                    margin:0px;
+                                    line-height: 18px;
+                                }
+                            }
+                            .notification-added-info{
+                                margin: 8px 0px 0px 0px;
+                                line-height: 15px;
+                                font-size: 12px;
+                                span{
+                                    color:$notification-date-col;
+                                }
+                            }
+                            .notification-date-time{
+                                margin: 8px 0px 0px 0px;
+                                text-align: end;
+                                line-height: 15px;
+                                font-size: 12px;
+                                color:$notification-date-col;
+                            }
+                        }
+                        
+                    }
+                    .notification-bottom{
+                        border-radius: 0px 0px 2px 2px;
+                        box-shadow: 0px 1px 6px $shadow-col;
+                        width: 100%;
+                        height: 48px;
+                        margin: 0px;
+                        justify-self: center;
+                        a{
+                            display: block;
+                            
+                            text-transform: uppercase;
+                            color: $dark-green-text-col;
+                            width: 100%;
+                            text-align: center;
+                        }
+                    }
+                    // .notification-bottom{
+                    //     @include flex-dir-jus-align(row,space-evenly,center);
+                    //     width: 100%;
+                    //     height: 48px;
+                    //     margin: 0px;
+                    // }
+                }
+                
+                #display-announcement{
+                    box-shadow: 0px 1px 6px $shadow-col;
+                    right:0px;
+                    @include phone{
+                        right:-90px;
+                    }
+                    top:56px;
+                    z-index: 1;
+                    position: absolute;
+                    background-color: $white-col;
+                    @include flex-dir-jus-align(column,normal,normal);
+                    display: none;
+                    width: 315px;
+                    height:fit-content;
+                    .announcement-data{
+                        overflow-y:scroll;
+                        max-height: 534px;
+                        @include flex-dir-jus-align(column,normal,normal);
+                        .one-announcement{
+                            border-bottom: 1px solid $notification-bottom-border-col;
+                            padding:16px;
+                            @include flex-dir-jus-align(column,normal,normal);
+                            .announcement-head{
+                                padding: 0px;
+                                margin: 0px;
+                                @include flex-dir-jus-align(row,space-between,normal);
+                                gap:8px;
+                                img{
+                                    justify-self: flex-end;
+                                    height: 18px;
+                                    width: 18px;
+                                }
+                                .announcement-by{
+                                    margin:0px;
+                                    font-size: 12px;
+                                    line-height: 15px;
+                                    span{
+                                        color:$notification-date-col
+                                    }
+                                }
+                                .announcement-info{
+                                    margin: 8px 0px 0px 0px;
+                                    line-height: 18px;
+                                }
+                            }
+                            .announcement-added-info{
+                                margin: 8px 0px 0px 0px;
+                                line-height: 15px;
+                                font-size: 12px;
+                                span{
+                                    color:$notification-date-col;
+                                }
+                            }
+                            .announcement-attached-detail{
+                                margin: 8px 0px 0px 0px;
+                                @include flex-dir-jus-align(row,space-between,center);
+                                .announcement-attached-files{
+                                    display: flex;
+                                    height: 15px;
+                                    span{
+                                        padding-right: 2px;
+                                        line-height: 15px;
+                                        font-size: 14px;
+                                    }
+                                    p{
+                                        margin: 0px;
+                                        line-height: 15px;
+                                        font-size: 12px;
+                                        color:$notification-date-col;
+                                        
+                                    }
+                                }
+                                p{
+                                    justify-self: flex-end;
+                                    margin: 0px;
+                                    line-height: 15px;
+                                    font-size: 12px;
+                                    color:$notification-date-col;
+                                    
+                                }
+                                
+                            }
+                        }
+                        
+                    }
+                    .announcement-bottom{
+                        border-radius: 0px 0px 2px 2px;
+                        box-shadow: 0px 1px 6px $shadow-col;
+                        @include flex-dir-jus-align(row,space-evenly,center);
+                        width: 100%;
+                        height: 48px;
+                        margin: 0px;
+                        .devider{
+                            border-left:1px solid $input-bottom-border-col;
+                            padding: 0px;
+                            height: 30px;
+                        }
+                        a{
+                            display: block;
+                            text-transform: uppercase;
+                            color: $dark-green-text-col;
+                            width: 100%;
+                            text-align: center;
+                        }
+                    }
+                }
+                .open-sub-nav-icon{
+                    display: none;
+                    @include teblet{
+                        display: block;
+                    }
+                }
+                
+                .announcement-link{
+                    p{
+                        right:-10px;
+                    }
+                }
+                .profile-nav{
+                    img{
+                        border: 2px solid $nav-link-col;
+                        border-radius: 50%;
+                        width: 32px;
+                        height: 32px;
+                    }
+                    p{
+                        height:16px;
+                        width: 16px;
+                        background-color: $white-col;
+                        span{
+                            font-size: 8px;
+                            color:$black-col
+                        }
+                    }
+                }
+            }
+            
+            .sub-nav{
+                display: none;
+            }
+            .hamburger{
+                display: none;
+                height: 58px;
+                a{
+                    img{
+                        height: 35px;
+                        width: 35px;
+                    }
+                }
+                @include teblet{
+                    display: inline;
+                }
+            }
+        }
+        @include teblet{
+            .expand{
+                color:$dark-green-text-col;
+                background-color: $white-col;
+                box-sizing: border-box;
+                border-radius: 2px;
+                box-shadow: 0px 13px 20px $shadow-col;
+                width: 60vw;
+                max-width: 280px;
+                height: fit-content;
+                position: absolute;
+                top:57px;
+                right: 16px;
+                @include phone{
+                    right: 5px;
+                }
+                display: block;
+                z-index: 1;
+                
+                .no-sub{
+                    width: 100%;
+                    a{
+                        box-sizing: border-box;
+                        width: 100%;
+                    }
+                }
+                .have-sub{
+                    width: 100%;
+                    .link-div{
+                        width: 100%;
+                        a{
+                            width: 100%;
+                            pointer-events: none;
+                            @include flex-dir-jus-align(row,space-between,normal);
+                            img{
+                                filter:invert(0.9) sepia(0.32) saturate(5.8) hue-rotate(61.2deg) brightness(0.7);
+                                margin-right:10px;
+                                width: 25px;
+                            }
+          
+                        }
+
+                    }
+                    .sub-nav{
+                        display: none;
+                        justify-content: flex-start;
+                        list-style-type: none;
+                        background-color: $sub-nav-bg-col;
+                        height: fit-content;
+                        top: 56px;
+                        box-sizing: border-box;
+                        width:100%;
+                        ul{
+                            width:100%;
+                            padding-left: 10%;
+                            @include flex-dir-jus-align(column,flex-end,center);
+                            li{
+                                width:100%;
+                                a{
+                                    width:100%;
+                                    padding: 0px 10px 0px 16px;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                li{
+                    width: fit-content;
+                    padding: 0px;
+                    min-height: 48px;
+                    height: fit-content;
+                    @include flex-dir-jus-align(column,center,normal);
+                    a{
+                        padding-left: 16px;
+                        height: 100%;
+                        line-height: 48px;
+                        display: flex;
+                        p{
+                            display: none;
+                        }
+                    }
+                }
+                .open-tab-border{
+                    width: 100%;
+                }
+            }
+        }
+        
+    }
+  
+  }
+  

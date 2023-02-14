@@ -1,0 +1,222 @@
+*{
+    box-sizing: border-box;
+}
+@import "colors";
+@import "mixin";
+@font-face{
+    font-family: "quicksand";
+    src: url("fonts/Quicksandfont1/Quicksand-VariableFont_wght.ttf") format(".ttf");
+}
+@import "commom_class_dashboard";
+@import "header";
+@import "footer";
+
+
+html{
+    @include flex-dir-jus-align(column,normal,normal);
+    body{
+        font-family: quicksand;
+        box-sizing: border-box;
+        margin: 0px;
+        max-width: 110vw;
+        background-color: $bg-color;
+        header{
+            @extend header;
+        }
+        .main{
+            margin: 24px 24px 32px 24px;
+            @include phone{
+                margin: 25px 10px;
+            }
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 64px 69px 1fr;
+            grid-template-areas: "h h"
+                                "s s"
+                                "c c";
+            grid-auto-flow: row;
+            .main-head{
+                height: 64px;
+                background-color: $main-head-bg-col;
+                grid-area: h;
+                width: 100%;
+                @include flex-dir-jus-align(row,space-between,normal);
+                gap:10px;
+                div{
+                    @include flex-dir-jus-align(row,center,center);
+                    width: 50%;
+                    img{
+                        width: 29px;
+                        height: 32px;
+                    }
+                    p{
+                        font-size: 16px;
+                        line-height: 30px;
+                        display: flex;
+                        span{
+                            font-size: 24px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                
+                .main-head-bottom-border{
+                    border-bottom: 5px solid $black-col;
+                }
+            }
+            .sortbar{
+                font-size: smaller;
+                font-weight: 500;
+                grid-area: s;
+                width: 100%;
+                padding-top:24px ;
+                @include flex-dir-jus-align(row,space-between,flex-end);
+                color: $sort-bar-text-col;
+                border-bottom: 2px solid $input-bottom-border-col;
+
+                .sort-dropdown{
+                    width: 20%;
+                    @include teblet{
+                        width: 40%;
+                    }
+                    @include phone{
+                        width: 60%;
+                    }
+                    @include flex-dir-jus-align(row,normal,center);
+                    display: flex;
+                    .dropdown-menu{
+                        font-size: 16px;
+                        outline: none;
+                        width: 60%;
+                        border:none;
+                        height: 100%;
+                        margin-right: 15px;
+                        background-color: $bg-color;
+                    }
+                    img{
+                        width: 12px;
+                        height: 24px;
+                    }
+                }
+            }
+            .courses{
+                padding-top: 17px;
+                width: 100%;
+                grid-area: c;
+                @include flex-dir-jus-align(row,center,normal);
+                flex-wrap: wrap;
+                gap: 24px;
+                .course{
+                    box-sizing: border-box;
+                    width: 476px;
+                    max-width: 476px;
+                    min-width: 200px;
+                    height: 246px;
+                    position:relative;
+                    padding: 21px 24px 9px 24px;
+                    font-size: 12px;
+                    font-weight: bold;
+                    color:$course-text-col;
+                    background-color: $white-col;
+                    @include teblet{
+                        width: 100%;
+                        max-width: 476px;
+                    }
+                    @include phone{
+                        width:100%;
+                        max-width: 476px;
+                    }
+                    @include flex-dir-jus-align(column,normal,normal);
+
+                    .expired{
+                        box-sizing: border-box;
+                        line-height: 12px;
+                        height: 18px;
+                        width: 52px;
+                        top:-10px;
+                        padding: 4px 5px 2px 5px;
+                        border-radius: 2px;
+                        left: 0px;
+                        position: absolute;
+                        background-color: $expired-course-bg-col;
+                        color: $expired-course-col;
+                        font-size: 10px;
+                    }
+                    .course-data{
+                        height: 157px;
+                        display: flex;
+                        .course-img{
+                            border-radius: 2px;
+                            height: 157px;
+                            width: 132px;
+                            @include phone{
+                                width: 40%;
+                            }
+                        }
+                        .course-info{
+                            width: 100%;
+                            padding: 0px 0px 0px 16px;
+                            @include phone{
+                                width: 60%;
+                            }
+                            .course-first-line{
+                                overflow: hidden;
+                                line-height: 20px;
+                                max-height: 40px;
+                                text-overflow: ellipsis;
+                                @include flex-dir-jus-align(row,space-between,normal);
+                                img{
+                                    height: 24px;
+                                    width: 20px;
+                                }
+                                h3{
+                                    font-size: 16px;
+                                    margin: 0px;
+                                    margin:0px;
+                                }
+                            }
+                            .course-subject{
+                                margin: 7px 0px;
+                                font-size: 12px;
+                                span{
+                                    font-weight: bolder;
+                                }
+                                .add-grade{
+                                    color:$dark-green-text-col;
+                                }
+                            }
+                            .course-detail{
+                                width: 90%;
+                                p{
+                                    margin:0px;
+                                }
+                                .dropdown-classes{
+                                    margin: 16px 16px 0px 0px;
+                                    outline: none;
+                                    margin-bottom: 8px;
+                                    font-size: 16px;
+                                    width: 100%;
+                                    border:0px;
+                                    border-bottom: 1px solid $black-col;
+                                }
+                            }
+                        }
+                    }
+    
+                    .course-track-icons{
+                        height: 40px;
+                        margin:16px 0px 0px 0px;
+                        border-top: 2px solid $input-bottom-border-col;
+                        padding: 16px 24px 0px 24px;
+                        @include flex-dir-jus-align(row,space-between,center);
+                    }
+                }
+            }
+        }
+        footer{
+            @extend footer;
+        }
+    }
+}
+
+
