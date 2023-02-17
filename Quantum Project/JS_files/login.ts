@@ -4,15 +4,7 @@ const showPsd=document.querySelector(".show-password") as HTMLImageElement
 const password=document.querySelector("#password") as HTMLInputElement
 const username=document.querySelector("#username") as HTMLInputElement
 const loginBtn=document.querySelector(".login-btn") as HTMLInputElement
-let psdPattern=/\d/;
-console.log("eefrefref");
 
-
-fetch("footer.html")
-.then(res=>res.text())
-.then(data=>{
-    footer.innerHTML=data
-})
 showPsd.addEventListener("click",()=>{
     if(password.type==="text"){
         password.type="password";

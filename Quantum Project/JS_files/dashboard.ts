@@ -26,16 +26,18 @@ var windowSize=window.innerWidth;
 
 // onclick hamburger event
 ham.addEventListener('click', () => {
-    console.log(window.innerWidth)
     if(document.querySelector('.expand') as HTMLDataListElement){
         hamburgerIcon.classList.remove('white-icon')
         collapses.style.animation='menu-close-anim 300ms'
         setTimeout(()=>{
-            console.log("into")
             collapses.classList.remove("expand");
         },280)
     }
     else{
+        // close notification dropdown if that is opened
+        closeNotification()
+        // close announcement dropdown if that is opened
+        closeAnnouncement()
         collapses.style.animation='menu-open-anim 300ms'
         hamburgerIcon.classList.add('white-icon')
         collapses.classList.add("expand")
@@ -53,7 +55,6 @@ function open_sub_nav(id){
             sub_nav=document.querySelector('#'+id+'-sub-nav') as HTMLDivElement
             current_link= document.querySelector('#'+id) as HTMLLinkElement
             dropdown_arrow=document.querySelector('#'+id+'-dropdown-arrow') as HTMLImageElement
-            console.log(sub_nav.style.display)
             if(sub_nav.style.display=='none' || sub_nav.style.display==''){
                 if(document.querySelector(".sub-nav-display-flex") as HTMLDivElement){
                     let active=document.querySelector(".sub-nav-display-flex") as HTMLDivElement
@@ -71,14 +72,12 @@ function open_sub_nav(id){
                 // set marker to identify when other sub menu will opened by user
                 sub_nav.classList.add('sub-nav-display-flex')
                 sub_nav.style.display='flex'
-                console.log("open")
                 current_link.classList.add('sub-nav-link-bg')
                 dropdown_arrow.classList.add('sub-nav-dropdown-arrow')
                 sub_nav.style.animation='menu-open-anim 300ms'
                 flag=1
             }
             else if(sub_nav.style.display=='flex'){
-                console.log("close");
                 sub_nav.style.animation='menu-close-anim 300ms'
                 setTimeout(()=>{
                     current_link.classList.remove('sub-nav-link-bg')
@@ -101,17 +100,11 @@ addEventListener("resize",()=>{
 
 // Announcment open and close event when click on it 
 openAnnouncement.addEventListener('click', () => {
-    console.log(displayAnnouncement.style.display)
     if(displayAnnouncement.style.display!='flex'){
         // close announcement dropdown if that is opened
-        if(totalNotification.style.display==='none'){
-            notificationIcon.classList.remove('white-icon') 
-            totalNotification.style.display='flex'
-            displayNotification.style.animation='menu-close-anim 300ms'
-            setTimeout(()=>{
-                displayNotification.style.display='none'
-            },280)
-        }
+        closeAnnouncement()
+        // close hamburger menu dropdown if that is opened
+        closeHamMenu()
         announcementIcon.classList.add('white-icon') 
         displayAnnouncement.style.display='flex'
         displayAnnouncement.style.animation='menu-open-anim 300ms'
@@ -131,14 +124,9 @@ openAnnouncement.addEventListener('click', () => {
 openNotification.addEventListener('click', () => {
     if(displayNotification.style.display!=='flex'){
         // close notification dropdown if that is opened
-        if(totalAnnouncement.style.display==='none'){
-            announcementIcon.classList.remove('white-icon') 
-            totalAnnouncement.style.display='flex'
-            displayAnnouncement.style.animation='menu-close-anim 300ms'
-            setTimeout(()=>{
-                displayAnnouncement.style.display='none'
-            },280)
-        }
+        closeNotification()
+        // close hamburger menu dropdown if that is opened
+        closeHamMenu()
         notificationIcon.classList.add('white-icon') 
         displayNotification.style.display='flex'
         displayNotification.style.animation='menu-open-anim 300ms'
@@ -201,7 +189,7 @@ openAnnouncement.addEventListener('mouseleave', () => {
 
 // function for fetch cards data from json file
 const fetchCourse=async ()=> {
-    let responce = await fetch('../JSONFiles/courses.json')
+    let responce = await fetch('/JSONFiles/courses.json')
     return await responce.json()
 }
 // run function and print all card information 
@@ -281,4 +269,37 @@ fetchCourse()
     coursesTotal.innerHTML=total+''
 })
 
+// function for close hamburger menu dropdown if that is opened
+function closeHamMenu(){
+    if(document.querySelector('.expand') as HTMLDataListElement){
+        hamburgerIcon.classList.remove('white-icon')
+        collapses.style.animation='menu-close-anim 300ms'
+        setTimeout(()=>{
+            collapses.classList.remove("expand");
+        },280)
+    }
+}
+
+// function for close notification dropdown if that is opened
+function closeNotification(){
+    if(totalAnnouncement.style.display==='none'){
+        announcementIcon.classList.remove('white-icon') 
+        totalAnnouncement.style.display='flex'
+        displayAnnouncement.style.animation='menu-close-anim 300ms'
+        setTimeout(()=>{
+            displayAnnouncement.style.display='none'
+        },280)
+    }
+}
+// function for close announcement dropdown if that is opened
+function closeAnnouncement(){
+    if(totalNotification.style.display==='none'){
+        notificationIcon.classList.remove('white-icon') 
+        totalNotification.style.display='flex'
+        displayNotification.style.animation='menu-close-anim 300ms'
+        setTimeout(()=>{
+            displayNotification.style.display='none'
+        },280)
+    }
+}
 console.log(windowSize)

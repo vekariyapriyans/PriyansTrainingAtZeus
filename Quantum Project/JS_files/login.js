@@ -1,9 +1,8 @@
+var footer = document.querySelector("footer");
 var showPsd = document.querySelector(".show-password");
 var password = document.querySelector("#password");
 var username = document.querySelector("#username");
 var loginBtn = document.querySelector(".login-btn");
-var psdPattern = /\d/;
-console.log("eefrefref");
 showPsd.addEventListener("click", function () {
     if (password.type === "text") {
         password.type = "password";

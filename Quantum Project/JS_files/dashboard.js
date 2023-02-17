@@ -54,16 +54,18 @@ var coursesTotal = document.querySelector('.total-courses');
 var windowSize = window.innerWidth;
 // onclick hamburger event
 ham.addEventListener('click', function () {
-    console.log(window.innerWidth);
     if (document.querySelector('.expand')) {
         hamburgerIcon.classList.remove('white-icon');
         collapses.style.animation = 'menu-close-anim 300ms';
         setTimeout(function () {
-            console.log("into");
             collapses.classList.remove("expand");
         }, 280);
     }
     else {
+        // close notification dropdown if that is opened
+        closeNotification();
+        // close announcement dropdown if that is opened
+        closeAnnouncement();
         collapses.style.animation = 'menu-open-anim 300ms';
         hamburgerIcon.classList.add('white-icon');
         collapses.classList.add("expand");
@@ -80,7 +82,6 @@ function open_sub_nav(id) {
         sub_nav = document.querySelector('#' + id + '-sub-nav');
         current_link = document.querySelector('#' + id);
         dropdown_arrow = document.querySelector('#' + id + '-dropdown-arrow');
-        console.log(sub_nav.style.display);
         if (sub_nav.style.display == 'none' || sub_nav.style.display == '') {
             if (document.querySelector(".sub-nav-display-flex")) {
                 var active = document.querySelector(".sub-nav-display-flex");
@@ -98,14 +99,12 @@ function open_sub_nav(id) {
             // set marker to identify when other sub menu will opened by user
             sub_nav.classList.add('sub-nav-display-flex');
             sub_nav.style.display = 'flex';
-            console.log("open");
             current_link.classList.add('sub-nav-link-bg');
             dropdown_arrow.classList.add('sub-nav-dropdown-arrow');
             sub_nav.style.animation = 'menu-open-anim 300ms';
             flag = 1;
         }
         else if (sub_nav.style.display == 'flex') {
-            console.log("close");
             sub_nav.style.animation = 'menu-close-anim 300ms';
             setTimeout(function () {
                 current_link.classList.remove('sub-nav-link-bg');
@@ -126,17 +125,11 @@ addEventListener("resize", function () {
 });
 // Announcment open and close event when click on it 
 openAnnouncement.addEventListener('click', function () {
-    console.log(displayAnnouncement.style.display);
     if (displayAnnouncement.style.display != 'flex') {
         // close announcement dropdown if that is opened
-        if (totalNotification.style.display === 'none') {
-            notificationIcon.classList.remove('white-icon');
-            totalNotification.style.display = 'flex';
-            displayNotification.style.animation = 'menu-close-anim 300ms';
-            setTimeout(function () {
-                displayNotification.style.display = 'none';
-            }, 280);
-        }
+        closeAnnouncement();
+        // close hamburger menu dropdown if that is opened
+        closeHamMenu();
         announcementIcon.classList.add('white-icon');
         displayAnnouncement.style.display = 'flex';
         displayAnnouncement.style.animation = 'menu-open-anim 300ms';
@@ -155,14 +148,9 @@ openAnnouncement.addEventListener('click', function () {
 openNotification.addEventListener('click', function () {
     if (displayNotification.style.display !== 'flex') {
         // close notification dropdown if that is opened
-        if (totalAnnouncement.style.display === 'none') {
-            announcementIcon.classList.remove('white-icon');
-            totalAnnouncement.style.display = 'flex';
-            displayAnnouncement.style.animation = 'menu-close-anim 300ms';
-            setTimeout(function () {
-                displayAnnouncement.style.display = 'none';
-            }, 280);
-        }
+        closeNotification();
+        // close hamburger menu dropdown if that is opened
+        closeHamMenu();
         notificationIcon.classList.add('white-icon');
         displayNotification.style.display = 'flex';
         displayNotification.style.animation = 'menu-open-anim 300ms';
@@ -222,7 +210,7 @@ var fetchCourse = function () { return __awaiter(_this, void 0, void 0, function
     var responce;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, fetch('../JSONFiles/courses.json')];
+            case 0: return [4 /*yield*/, fetch('/JSONFiles/courses.json')];
             case 1:
                 responce = _a.sent();
                 return [4 /*yield*/, responce.json()];
@@ -247,4 +235,36 @@ fetchCourse()
     }
     coursesTotal.innerHTML = total + '';
 });
+// function for close hamburger menu dropdown if that is opened
+function closeHamMenu() {
+    if (document.querySelector('.expand')) {
+        hamburgerIcon.classList.remove('white-icon');
+        collapses.style.animation = 'menu-close-anim 300ms';
+        setTimeout(function () {
+            collapses.classList.remove("expand");
+        }, 280);
+    }
+}
+// function for close notification dropdown if that is opened
+function closeNotification() {
+    if (totalAnnouncement.style.display === 'none') {
+        announcementIcon.classList.remove('white-icon');
+        totalAnnouncement.style.display = 'flex';
+        displayAnnouncement.style.animation = 'menu-close-anim 300ms';
+        setTimeout(function () {
+            displayAnnouncement.style.display = 'none';
+        }, 280);
+    }
+}
+// function for close announcement dropdown if that is opened
+function closeAnnouncement() {
+    if (totalNotification.style.display === 'none') {
+        notificationIcon.classList.remove('white-icon');
+        totalNotification.style.display = 'flex';
+        displayNotification.style.animation = 'menu-close-anim 300ms';
+        setTimeout(function () {
+            displayNotification.style.display = 'none';
+        }, 280);
+    }
+}
 console.log(windowSize);
